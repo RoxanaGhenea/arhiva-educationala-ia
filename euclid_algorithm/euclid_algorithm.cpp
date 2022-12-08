@@ -2,18 +2,15 @@
 using namespace std;
 
 int euclidAlgorithm(int a, int b) {
-    int gcd;
     if(a < b) {
         swap(a, b);
     }
 
     if (b != 0) {
-        gcd = a%b;
-        return euclidAlgorithm(gcd, b);
+        return euclidAlgorithm(a % b, b);
     } else {
-        gcd = a;
+        return a;
     }
-    return gcd; 
 }
 
 int main()
