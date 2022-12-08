@@ -26,21 +26,21 @@ int main()
 {
     ifstream fin("elmaj.in");
     ofstream fout("elmaj.out");
-    int n, count_guess = 0, most_frequent = 0;
+    int n, countGuess = 0, mostFrequent = 0;
     fin >> n;
     for (int i = 1; i <= n; ++i) {
         fin >> v[i];
     }
 
-    most_frequent = guess(n);
+    mostFrequent = guess(n);
 
     for (int i = 1; i <= n; ++i) {
-        if (most_frequent == v[i]) {
-            count_guess += 1;
+        if (mostFrequent == v[i]) {
+            countGuess += 1;
         }
     }
-    if (count_guess >= n/2 + 1) {
-        fout << most_frequent << " " << count_guess;
+    if (countGuess >= n/2 + 1) {
+        fout << mostFrequent << " " << countGuess;
     } else {
         return -1;
     }
