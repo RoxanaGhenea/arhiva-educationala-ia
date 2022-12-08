@@ -1,21 +1,17 @@
-#include <iostream>
 #include <fstream>
 using namespace std;
 
-int euclidAlgorithm(int a, int b){
+int euclidAlgorithm(int a, int b) {
     int gcd;
-    if(a < b){
+    if(a < b) {
         swap(a, b);
     }
 
     if (b != 0) {
         gcd = a%b;
+        return euclidAlgorithm(gcd, b);
     } else {
         gcd = a;
-    }
-
-    if (b != 0){
-        return euclidAlgorithm(gcd, b);
     }
     return gcd; 
 }
@@ -26,7 +22,7 @@ int main()
     ofstream fout("euclid2.out");
     int t;
     fin >> t;
-    for (int i = 1; i <= t; ++i){
+    for (int i = 1; i <= t; ++i) {
         int a, b;
         fin >> a >> b;
         fout << euclidAlgorithm(a, b) << "\n";
