@@ -51,9 +51,7 @@ int main()
         fin >> operationType >> valueToFind;
         if (operationType == 0) {
             ans = binarySearch1(valueToFind, 1, n);         
-            if (valueToFind == vector[ans]) {
-                ans = binarySearch1(valueToFind, 1, n);
-            } else {
+            if (valueToFind != vector[ans]) {
                 ans = - 1;
             }
         } else if (operationType == 1) {
