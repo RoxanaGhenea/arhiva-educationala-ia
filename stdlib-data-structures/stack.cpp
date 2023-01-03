@@ -15,7 +15,7 @@ int main()
     }
 
     cout << "\n";
-
+    //Expect to give size of 25.
     cout << scores.size() << "\n";
 
     while (!scores.empty()) {
