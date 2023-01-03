@@ -16,6 +16,8 @@ int main()
 
     cout << "\n";
 
+    cout << scores.size() << "\n";
+
     while (!scores.empty()) {
         /* Below will record the last element, and the method pop will delete the last element
         from the stack, cout will give the element that was deleted, this will continue until
