@@ -15,19 +15,33 @@ int main()
     }
     cout << "\n";
 
+
     //Erases value 50 from the set
     mySet.erase(50);
 
-    //Output exptected: 0 10 20 30 40 60 70 80 90 100
+    //Output expected: 0 10 20 30 40 60 70 80 90 100
     for (auto x: mySet) {
         cout << x << " ";
     }
     cout << "\n";
 
+    if (mySet.find(70) != mySet.end()) {
+        cout << "Yes" << "\n";
+    } else {
+        cout << "No" << "\n";
+    }
+    
+    if (mySet.find(101) != mySet.end()) {
+        cout << "Yes" << "\n";
+    } else {
+        cout << "No" << "\n";
+    }
+
     mySet.insert(1);
     for (auto x: mySet) {
         cout << x << " ";
     }
+
     //Output expected: 0 1 10 20
     mySet.erase(mySet.find(30), mySet.end());
     cout << "\n";
