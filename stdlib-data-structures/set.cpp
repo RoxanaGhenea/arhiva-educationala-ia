@@ -24,7 +24,7 @@ int main()
         cout << x << " ";
     }
     cout << "\n";
-
+    
     if (mySet.find(70) != mySet.end()) {
         cout << "Yes" << "\n";
     } else {
