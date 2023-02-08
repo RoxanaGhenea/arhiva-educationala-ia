@@ -22,12 +22,15 @@ int findSet(int node) {
 }
 
 void unite(int x, int y) {
-    if (treeHeight[x] <= treeHeight[y]) {
-        father[findSet(x)] = findSet(y);
-        treeHeight[x] += 1; 
+    x = findSet(x);
+    y = findSet(y);
+    if (treeHeight[x] < treeHeight[y]) {
+        father[x] = y;
+    } else if (treeHeight[x] == treeHeight[y]) {
+        father[x] = y;
+        treeHeight[y] += 1;
     } else {
-        father[findSet(y)] = findSet(x); 
-        treeHeight[y] += 1; 
+        father[y] = x;
     }
 }
 
