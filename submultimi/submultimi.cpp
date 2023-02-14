@@ -10,12 +10,15 @@ ofstream fout ("submultimi.out");
 vector <int> submultime;
 
 void solution(int N, int lastValue) {
-    for (int j = 0; j < submultime.size(); ++j) {
-        fout << submultime[j] << " ";
+    if (!submultime.empty()) {
+        for (int j = 0; j < submultime.size(); ++j) {
+            fout << submultime[j] << " ";
+        }
+        fout << "\n";
     }
+    
     for (int i = lastValue; i <= N; ++i) {
         submultime.push_back(i);
-        fout << "\n";
         solution(N, i + 1);
         submultime.pop_back();
     }
