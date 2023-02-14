@@ -44,7 +44,7 @@ int main()
     }
     storeLocation[numberStores + 1] = iceRinkLocation;
 
-    for (int j = 1; j <= numberStores + 1; ++j) {
+    for (int j = 1; j <= numberStores; ++j) {
         distances[j] = storeLocation[j] - storeLocation[j - 1];
     }
     
