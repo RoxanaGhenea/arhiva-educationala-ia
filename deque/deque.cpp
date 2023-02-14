@@ -21,22 +21,17 @@ int main()
         fin >> array[i];
         value.first = i;
         value.second = array[i];
-        if (myDeque.empty()) {
-            myDeque.push_back(value);
-        } else {
-            while (!myDeque.empty() and array[i] <= myDeque.back().second) {
-                myDeque.pop_back();
-            }
-            myDeque.push_back(value);
-            while (!myDeque.empty() and myDeque.front().first <= i - K) {
-                myDeque.pop_front();
-            }
-            if (i >= K) {
-                sum += myDeque.front().second;
-            }
+        while (!myDeque.empty() and array[i] <= myDeque.back().second) {
+            myDeque.pop_back();
+        }
+        myDeque.push_back(value);
+        while (!myDeque.empty() and myDeque.front().first <= i - K) {
+            myDeque.pop_front();
+        }
+        if (i >= K) {
+            sum += myDeque.front().second;
         }
     }
 
     fout << sum;
-
 }
