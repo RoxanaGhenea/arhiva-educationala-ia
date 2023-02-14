@@ -9,17 +9,21 @@ using namespace std;
 vector <int> hashTable[1000000];
 int MOD = 999961;
 
-void addParameter(int parameter) {
-    int key, count = 0;
+int find(int parameter) {
+    int key;
     key = parameter % MOD;
     for (int i = 0; i < hashTable[key].size(); ++i) {
         if (parameter == hashTable[key][i]) {
-            break;
-        } else {
-            count += 1;
+            return 1;
         }
     }
-    if (count == hashTable[key].size()) {
+    return 0;
+}
+
+void addParameter(int parameter) {
+    int key;
+    key = parameter % MOD;
+    if (!find(parameter)) {
         hashTable[key].push_back(parameter);
     }
 }
@@ -34,18 +38,6 @@ void removeParameter(int parameter) {
             break;
         }
     }
-}
-
-int type3(int parameter) {
-    int key, ans;
-    key = parameter % MOD;
-    for (int i = 0; i < hashTable[key].size(); ++i) {
-        if (parameter == hashTable[key][i]) {
-            return 1;
-            break;
-        }
-    }
-    return 0;
 }
 
 int main()
@@ -63,7 +55,7 @@ int main()
         } else if (operationType == 2) {
             removeParameter(parameter);
         } else {
-            fout << type3(parameter);
+            fout << find(parameter);
             fout << "\n";
         }
     }
