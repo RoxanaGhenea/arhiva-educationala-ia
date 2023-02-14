@@ -28,14 +28,14 @@ int main ()
             numberStrikes += 1;
             offset += distanceShifted;
 
-            while (game.front() == strikePoint) {
+            while (!game.empty() and game.front() == strikePoint) {
                 if (!game.empty()) {
                     game.pop_front();
                 } else {
                     break;
                 }           
             }
-            while (game.back() - offset <= 0) {
+            while (!game.empty() and game.back() - offset <= 0) {
                 if (!game.empty()) {
                     game.pop_back(); 
                 } else {
