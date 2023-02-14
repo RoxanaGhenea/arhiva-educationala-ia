@@ -29,18 +29,10 @@ int main ()
             offset += distanceShifted;
 
             while (!game.empty() and game.front() == strikePoint) {
-                if (!game.empty()) {
-                    game.pop_front();
-                } else {
-                    break;
-                }           
+                game.pop_front();    
             }
             while (!game.empty() and game.back() - offset <= 0) {
-                if (!game.empty()) {
-                    game.pop_back(); 
-                } else {
-                    break;
-                }
+                game.pop_back();
             }
         }
         cout << numberStrikes << "\n";
