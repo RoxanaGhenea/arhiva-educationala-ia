@@ -5,8 +5,7 @@
 using namespace std;
 string s;
 string t;
-vector <char> sDiff;
-vector <char> tDiff;
+vector <char> diff;
 
 int main()
 {
@@ -25,19 +24,17 @@ int main()
         for (int j = 0; j < stringLen; ++j) {
             if (s[j] == t[j]) continue;
             if (s[j] != t[j]) {
-                sDiff.push_back(s[j]);
-                tDiff.push_back(t[j]);
+                diff.push_back(s[j]);
+                diff.push_back(t[j]);
             }
         }
-        int diff = sDiff.size() + tDiff.size();
-        if (diff == 0) {
+        if (diff.size() == 0) {
             cout << "YES" << "\n";
-        } else if (diff == 4 and (sDiff[0] == sDiff[1] and tDiff[0] == tDiff[1])) {
+        } else if (diff.size() == 4 and (diff[0] == diff[2] and diff[1] == diff[3])) {
             cout << "YES" << "\n";
         } else {
             cout << "NO" << "\n";
         }
-        sDiff.clear();
-        tDiff.clear();
+        diff.clear();
     }
 }
