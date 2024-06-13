@@ -21,7 +21,7 @@ int main()
 
         for (int i = 2; i <= n; ++i) {
             quotient = n / i;
-            sumMultiples = i * quotient * (quotient + 1);
+            sumMultiples = i * quotient * (quotient + 1) / 2;
             if (max <= sumMultiples) {
                 max = sumMultiples;
                 iMax = i;
